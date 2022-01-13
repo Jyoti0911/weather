@@ -14,22 +14,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
-
+<style>
+  .res{
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(8, 241, 152);
+    border-radius: 10px;
+    color: crimson;
+  }
+  .input-group{
+   border-radius: 10px;
+   background-color: cyan;
+  }
+</style>
 <body>
-  <nav class="row" style="background: rgb(0, 128, 128); color: white;">
+  <nav class="row" style="background: rgb(0, 128, 128); color: rgb(255, 255, 255);">
     <h1 class="col-md-3 text-center">Weather App</h1>
   </nav>
   <br />
   <br />
   
   <center class="row">
-   <h2 class="text-center mb-2" style="color:rgb(37, 37, 43)">Welcome to Weather App</h2>
+   <h2 class="text-center mb-3" style="color:rgb(37, 37, 43)">Welcome to Weather App</h2>
     <form method="post" class="col-md-6 col-md-offset-3">
       {% csrf_token %}
       <div class="input-group">
         <input type="text" class="form-control" name="city" placeholder="Search">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-default bg-primary" type="submit">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
@@ -37,8 +49,8 @@
   </center>
   <div class="row">
     {% if country_code and coordinate and temp and pressure and humidity %}
-    <div class="col-md-6 col-md-offset-3 res">
-      <h3>country code : {{country_code}}</h1>
+    <div class="col-md-3 col-md-offset-4 res">
+      <h3>country code : {{country_code}}</h3>
         <h5>coordinate : {{coordinate}}</h5>
         <h5>temp : {{temp}}</h5>
         <h5>pressure : {{pressure}} </h5>
