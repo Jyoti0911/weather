@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 web: gunicorn weather.wsgi --log-file-
+=======
+web: gunicorn <django-root-name(containing wsgi)>.wsgi --log-file -
+>>>>>>> 69ad43e2766ab5f621484c757c7a3523834bfa6a
